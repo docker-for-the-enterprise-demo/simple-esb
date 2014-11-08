@@ -2,7 +2,7 @@
 <mule xmlns="http://www.mulesoft.org/schema/mule/core"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xmlns:jms="http://www.mulesoft.org/schema/mule/jms"
-      xmlns:spring="http://www.springframework.org/schema/beans"
+      xmlns:spring="http://www.springframework.org/schema/beans" xmlns:http="http://www.mulesoft.org/schema/mule/core"
       xsi:schemaLocation="
         http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
         http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd
@@ -19,9 +19,9 @@
             persistentDelivery="true"/>
 
 
-    <flow name="PasteBinUpload">
-        <jms:inbound-endpoint queue="pasteBinUploadQueue"/>
-        <logger message="Received Paste Bin Upload Request" level="INFO" category="pasteBinUpload"/>
+    <flow name="ImageConverter">
+        <jms:inbound-endpoint queue="imageConvert"/>
+        <logger message="Received Paste Bin Upload Request: #[payload]" level="INFO" category="imageConvert"/>
     </flow>
 
 </mule>

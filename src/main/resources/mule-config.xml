@@ -21,7 +21,7 @@
 
     <flow name="ImageConverter">
         <jms:inbound-endpoint queue="imageConvert"/>
-        <logger message="Received Paste Bin Upload Request: #[payload]" level="INFO" category="imageConvert"/>
+        <logger message="Received Image Convert request: #[payload]" level="INFO" category="imageConvert"/>
     </flow>
 
 </mule>
